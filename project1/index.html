@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ZYREXPT CODER</title>
+
+<link rel="stylesheet" href="style.css"/>
+
+<!-- FIREBASE WAJIB -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<style>
+  .page{display:none;}
+  .page.active{display:block;}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">ZYREXPT CODER</div>
+
+  <div class="menu">
+    <span onclick="show('home')">HOME</span>
+    <span onclick="show('projects')">PROJECTS</span>
+    <span onclick="show('contact')">CONTACT</span>
+    <span onclick="show('cs')">CS</span>
+    <span onclick="show('owner-login')">LOGIN</span>
+    <span onclick="show('owner')">ADMIN</span>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="home-wrap">
+
+    <div class="home-card">
+      <h2>STATUS SYSTEM</h2>
+      <p>🟢 ONLINE</p>
+      <p>⚡ STABLE</p>
+      <p>🤖 CORE ACTIVE</p>
+      <p>📡 SECURE LINK</p>
+    </div>
+
+    <div class="home-center">
+      <img src="avatar.png" class="avatar"/>
+      <h1>ZYREX/riduan</h1>
+      <p>Frontend • Backend Developer</p>
+
+      <button onclick="show('projects')">PROJECTS</button>
+      <button onclick="show('contact')">CONTACT</button>
+
+      <!-- LIVE BOX -->
+      <div class="live-box">
+        <p id="clock">Loading time...</p>
+        <p id="status">🟢 SYSTEM ONLINE</p>
+        <p id="quote"></p>
+      </div>
+
+      <!-- 🎵 MUSIC -->
+      <div class="music-box">
+        <p>🎵 Background Music</p>
+
+        <button onclick="toggleMusic()">Play / Pause</button>
+
+        <audio id="bgm" loop>
+          <source src="music/music.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+    </div>
+
+    <div class="home-card">
+      <h2>SKILL MATRIX</h2>
+      <p>HTML/CSS █████████░ 90%</p>
+      <p>JavaScript ████████░░ 80%</p>
+      <p>Backend ██████░░░░ 65%</p>
+      <p>UI Design ███████░░░ 75%</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="page">
+  <h1>PROJECT DATABASE</h1>
+  <div class="box">
+    <p>📁 Dashboard UI System</p>
+    <p>📁 Portfolio Website v2</p>
+    <p>📁 Login System LocalStorage</p>
+    <p>📁 API Backend Core</p>
+    <p>📁 Game UI Prototype</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+  <h1>CONTACT NODE</h1>
+  <div class="box">
+    <p>📧 Email: ptcoderriduan@gmail.com</p>
+    <p>🐙 GitHub: github.com/ptcoderriduan</p>
+    <p>📸 Instagram: @movaire.id</p>
+    <p>💼 Status: sekolah</p>
+  </div>
+</section>
+
+<!-- CS CHAT -->
+<section id="cs" class="page">
+  <h1>CS CHAT</h1>
+
+  <div id="chat-box"></div>
+
+  <input id="name" placeholder="Nama">
+  <textarea id="message" placeholder="Tulis pesan"></textarea>
+
+  <button onclick="sendMessage()">Kirim</button>
+</section>
+
+<!-- OWNER LOGIN -->
+<section id="owner-login" class="page">
+  <h1>OWNER LOGIN</h1>
+
+  <input id="user" placeholder="Username">
+  <input id="pass" type="password" placeholder="Password">
+
+  <button onclick="loginOwner()">Login</button>
+</section>
+
+<!-- OWNER PANEL -->
+<section id="owner" class="page">
+  <h1>OWNER PANEL</h1>
+  <div id="inbox"></div>
+</section>
+
+<!-- 🔥 AUTO PLAY SCRIPT (IMPORTANT) -->
+<script>
+window.addEventListener("load", () => {
+  const music = document.getElementById("bgm");
+  if (!music) return;
+
+  music.volume = 0.5;
+
+  const playPromise = music.play();
+
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      console.log("Autoplay diblok browser, nunggu klik user");
+
+      document.body.addEventListener("click", () => {
+        music.play();
+      }, { once: true });
+    });
+  }
+});
+</script>
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+body{
+  margin:0;
+  background:#050b08;
+  color:#7CFF6B;
+  font-family:Arial;
+}
+
+/* ================= NAV ================= */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:12px;
+  border-bottom:1px solid #7CFF6B33;
+}
+
+.menu span{
+  margin:0 10px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.menu span:hover{
+  color:#fff;
+  text-shadow:0 0 8px #7CFF6B;
+}
+
+
+/* ================= PAGE SYSTEM ================= */
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+
+/* ================= HOME ================= */
+.home-wrap{
+  display:flex;
+  justify-content:space-around;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.home-card{
+  border:1px solid #7CFF6B33;
+  padding:15px;
+  background:#06110c;
+}
+
+.home-center{
+  text-align:center;
+}
+
+.avatar{
+  width:100px;
+  border-radius:50%;
+  border:2px solid #7CFF6B33;
+}
+
+
+/* ================= CS CHAT ================= */
+#chat-box{
+  height:200px;
+  overflow:auto;
+  border:1px solid #7CFF6B;
+  padding:10px;
+  margin-bottom:10px;
+  background:#06110c;
+}
+
+
+/* ================= INPUT ================= */
+input{
+  padding:8px;
+  margin-top:5px;
+  background:#0b1a12;
+  color:#7CFF6B;
+  border:1px solid #7CFF6B33;
+}
+
+textarea{
+  padding:8px;
+  margin-top:5px;
+  background:#0b1a12;
+  color:#7CFF6B;
+  border:1px solid #7CFF6B33;
+  resize:none;
+}
+
+
+/* ================= BUTTON ================= */
+button{
+  padding:8px;
+  background:#7CFF6B;
+  border:none;
+  cursor:pointer;
+  margin-top:5px;
+  transition:0.2s;
+}
+
+button:hover{
+  background:#5dff5d;
+}
+
+
+/* ================= OWNER INBOX ================= */
+#inbox div{
+  border:1px solid #7CFF6B33;
+  padding:10px;
+  margin-bottom:10px;
+  background:#06110c;
+}
+
+
+/* ================= LIVE ELEMENTS ================= */
+#clock, #quote{
+  margin-top:10px;
+}
+
+
+/* ================= MUSIC BOX ================= */
+.music-box{
+  margin-top:10px;
+  padding:10px;
+  border:1px solid #7CFF6B33;
+  background:#06110c;
+}
+
+
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar{
+  width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#7CFF6B55;
+  border-radius:10px;
+}
